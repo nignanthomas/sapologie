@@ -16,6 +16,7 @@ import Default from './components/Default';
 import Modal from './components/Modal';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
         <Navbar {...this.props}></Navbar>
 
         <Switch>
-          <Route exact path="/" component={ProductList}></Route>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/women" component={ProductList}></Route>
           <Route path="/details" component={Details}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/login" component={Login}></Route>
