@@ -2,10 +2,43 @@ import React, { Component } from 'react';
 import { ProductConsumer } from '../context';
 import { Link } from 'react-router-dom';
 import { ButtonContainer } from './Button';
+import { Modal, Form, Input } from 'antd';
+
 
 class Details extends Component {
-    state = {  }
+
+    state = { visible: false }
+
+    showModal = () => {
+        this.setState({
+        visible: true,
+        });
+    }
+
+    handleOk = (e) => {
+        console.log(e);
+        this.setState({
+        visible: false,
+        });
+    }
+
+    handleCancel = (e) => {
+        console.log(e);
+        this.setState({
+        visible: false,
+        });
+    }
+
+
+
     render() { 
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <p>{this.props.error.message}</p>
+            )
+        }
+        // const { getFieldDecorator } = this.props.form;
         return (
             <ProductConsumer>
                 {(value) => {
@@ -26,10 +59,49 @@ class Details extends Component {
                                 </div>
                                 <div className="col-10 mx-aut0 col-md-6 my-3 text-capitalize">
                                     <h3>model: {title}</h3>
-                                    <h4 className="text-title text-uppercase text-muted mt-3 mb-2">made by: <span className="text-uppercase">{company}</span></h4>
-                                    <h4 className="text-blue"><strong>price: <span>$</span>{price}</strong></h4>
+                                    <h4 className="text-title text-uppercase text-muted mt-3 mb-2"><span className="text-uppercase">{company}</span></h4>
+                                    <h4 className="text-blue"><strong>price: <span>Ksh </span>{price}</strong></h4>
                                     <p className="text-capitalize font-weight-bold mt-3 mb-0">Specifications:</p>
                                     <p className="text-muted lead">{info}</p>
+
+
+                                    <div>
+                                        <ButtonContainer type="primary" onClick={this.showModal}>
+                                        Measurements
+                                        </ButtonContainer>
+                                        <Modal
+                                        title="Your Measurements"
+                                        visible={this.state.visible}
+                                        onOk={this.handleOk}
+                                        onCancel={this.handleCancel}
+                                        >
+                                        <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
+                                            <Form.Item label="Sleeve Length" >
+                                                    <Input />
+                                            </Form.Item>
+
+                                            <Form.Item label="Chest/Bust" >
+                                                <Input />
+                                            </Form.Item>
+
+                                            <Form.Item label="Waist" >
+                                                <Input />
+                                            </Form.Item>
+
+                                            <Form.Item label="Hips/Seat" >
+                                                <Input />
+                                            </Form.Item>
+
+
+                                            <Form.Item label="Inseam" >
+                                                <Input />
+                                            </Form.Item>
+
+                                            </Form>
+                                        </Modal>
+                                    </div>
+
+
                                     {/* buttons */}
                                     <div>
                                         <Link to="/">
