@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import {withRouter} from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import * as actions from '../store/actions/auth';
+import {LogoContainer} from './Logo';
 
 
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
@@ -34,6 +35,11 @@ class NormalLoginForm extends React.Component {
         return (
         <div className="col-10 mx-auto col-md-6 col-lg-3 my-4 border rounded px-2 py-2 border-dark">
             {errorMessage}
+
+            <div className=" text-center mb-4">
+                <LogoContainer className="font-weight-bold pb-3 text-center"><span><i className="fas fa-shopping-bag"></i></span> <strong>Sapo<span className="text-danger">logie</span></strong></LogoContainer>
+            </div>
+            
             {
                 this.props.loading ?
                 <Spin indicator={antIcon} />
