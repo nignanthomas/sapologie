@@ -46,3 +46,23 @@ body{
   font-size: 1.2rem;
   color: var(--mainYellow)
 }
+
+
+.banner{
+  background-image: url("https://www.fashionghana.com/wp-content/uploads/2017/05/moesha-bodoung-12.jpg");
+  margin-left: -10rem;
+  margin-right: -10rem;
+  height: 20rem;
+  margin-top: 2rem;
+}
+
+.banner-text{
+  float: left;
+  /* float: right; */
+}
+
+@media only screen and (max-width: 539px) {
+  .banner{
+    display: none;
+  }
+}

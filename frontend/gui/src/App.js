@@ -18,6 +18,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import Categories from './components/Categories';
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
+          <Route exact path="/categories" component={Categories}></Route>
           <Route exact path="/women" component={ProductList}></Route>
           <Route path="/details" component={Details}></Route>
           <Route path="/cart" component={Cart}></Route>

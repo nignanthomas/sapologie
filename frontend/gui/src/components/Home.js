@@ -6,16 +6,22 @@ import { Link } from "react-router-dom";
 class Home extends Component {
     render() { 
         return (
+            
             <div className="container">
-                <Title name="shop" title="now"></Title>
+                <div className="banner">
+                <div className="banner-text">
+                    <Title name="shop" title="now"></Title>
+                </div>
+                </div>
+                {/* <Title name="shop" title="now"></Title> */}
                     <div className="row">
                         <CatWrapper  className="col-10 mx-auto col-md-6 col-lg-6 my-4">
                             <div className="category">
-                                <Link to="/women">
+                                <Link to="/categories">
                                     <div className="">
                                         <img src="http://www.galknows.com/wp-content/uploads/2015/10/african-women-fashion-styles0891.png" alt="Women" className="img-fluid" />
                                     </div>
-                                    <div className="message">
+                                    <div className="message rounded-left">
                                         WOMEN
                                     </div>
                                 </Link>
@@ -29,7 +35,7 @@ class Home extends Component {
                                     <div className="">
                                         <img src="https://www.swiftfoxx.com/wp-content/uploads/2017/06/african-wear-for-office3-819x1024.jpg" alt="Men" className="img-fluid" />
                                     </div>
-                                    <div className="message">
+                                    <div className="message rounded-left">
                                         MEN
                                     </div>
                                 </Link>
@@ -47,6 +53,9 @@ const CatWrapper = styled.div`
         filter: grayscale(100%);
         transition: all 1s linear;
         position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: 500px;
     }
     &:hover {
         .category img {
