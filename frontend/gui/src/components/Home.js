@@ -9,6 +9,9 @@ class Home extends Component {
             
             <div className="container">
                 <div className="banner">
+                <div className="mx-auto text-center"  style={{fontSize:"2rem"}}>
+                    <p><span>Free shipping /</span> <span className="text-primary">/ Fast delivery</span></p>
+                </div>
                 <div className="banner-text">
                     <Title name="shop" title="now"></Title>
                 </div>
