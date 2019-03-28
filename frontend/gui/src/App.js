@@ -17,6 +17,7 @@ import Modal from './components/Modal';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -41,6 +42,8 @@ class App extends Component {
         </Switch>
 
         <Modal></Modal>
+
+        <Footer></Footer>
         
       </React.Fragment>
     );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LogoContainer = styled.button`
-    font-family: ${props => props.cartnav?"'Oswald', sans-serif":"'Geostar Fill', cursive"};
+    font-family: ${props => props.cartnav?"'Oswald', sans-serif":"'Megrim', cursive"};
     letter-spacing: ${props => props.cartnav?"0.1rem":"0.3rem"};
     text-transform: capitalize;
     font-size: 1.4rem;

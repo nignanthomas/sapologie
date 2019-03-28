@@ -17,9 +17,9 @@ class Product extends Component {
                             <Link to="/details">
                                 <img src={img} alt="Product" className="card-img-top" />
                             </Link>
-                            <button className="cart-btn" disabled={inCart?true:false} onClick={()=>{value.addToCart(id); value.openModal(id)}}>
+                            {/* <button className="cart-btn" disabled={inCart?true:false} onClick={()=>{value.addToCart(id); value.openModal(id)}}>
                                 {inCart?(<p className="text-capitalize mb-0" disabled>in cart</p>): <i className="fas fa-cart-plus"/>    }
-                            </button>
+                            </button> */}
                         </div>
                         )}
                         
@@ -27,7 +27,7 @@ class Product extends Component {
                     
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0">{title}</p>
-                        <h5 className="text-blue font-italic mb-0"><span className="mr-1">$</span>{price}</h5>
+                        <h5 className="text-blue font-italic mb-0"><span className="mr-1">Ksh</span>{price}</h5>
                     </div>
                 </div>
             </ProductWrapper>
@@ -51,7 +51,8 @@ Product.propTypes = {
 const ProductWrapper = styled.div`
     .card{
         border-color: transparent;
-        transition: all 0.5s linear;
+        // transition: all 0.5s linear;
+        
     }
     .card-footer{
         background: transparent;
@@ -68,14 +69,17 @@ const ProductWrapper = styled.div`
         }
     }
     .img-container{
+        backgound: var(--mainWhite);
         position: relative;
         overflow: hidden;
     }
     .card-img-top{
+        backgound: var(--mainWhite) !important;
         transition: all 0.5s linear;
+        transform: scale(1.3);
     }
     .img-container:hover .card-img-top{
-        transform: scale(1.2);
+        // transform: scale(1.2);
     }
     .cart-btn{
         position: absolute;
